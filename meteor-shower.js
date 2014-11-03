@@ -2,18 +2,48 @@ if (Meteor.isClient) {
   // counter starts at 0
   Session.setDefault("counter", 0);
 
-  Template.hello.helpers({
+  Template.player1.helpers({
     counter: function () {
       return Session.get("counter");
     }
   });
 
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set("counter", Session.get("counter") + 1);
+  Template.player2.helpers({
+    counter: function () {
+      return Session.get("counter");
     }
   });
+
+  Template.player3.helpers({
+
+  });
+
+  Template.player1.events({
+    'submit form': function (event) {
+      event.preventDefault();
+      var response = $("#p1").val();
+      $("#history").prepend("<li>Interviewer: " + response + "</li>")
+      $("input[type='text']").val("");
+    }
+  });
+
+  Template.player2.events({
+    'submit form': function (event) {
+      event.preventDefault();
+      var response = $("#p2").val();
+      $("#history").prepend("<li>Interviewee: " + response + "</li>")
+      $("input[type='text']").val("");
+    }
+  });
+
+  Template.player3.events({
+    'submit form': function(event) {
+      event.preventDefault();
+      var response = $("#p3").val();
+      $("#history").prepend("<li>Moderator: " + response + "</li>")
+      $("input[type='text']").val("");
+    }
+  })
 }
 
 if (Meteor.isServer) {

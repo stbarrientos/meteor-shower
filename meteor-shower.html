@@ -3,12 +3,38 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
+  <h1>Practice for your next interview, with strangers!</h1>
+<div class="battlefield">
+  {{> player1}}
+  {{> player2}}
+  {{> player3}}
+</div>
+<div class="battlelog">
+  <ul id="history">
+  </ul>
+</div>
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="player1">
+  <form>
+  <label>Interviewer's question</label>
+  <input id="p1" type="text" placeholder="Finish Him/Her!">
+  <input type="submit">
+  </form>
+</template>
+
+<template name="player2">
+  <form>
+  <label>Interviewee's Response</label>
+  <input id="p2" type="text" placeholder="Don't sweat it">
+  <input type="submit">
+  </form>
+</template>
+
+<template name="player3">
+  <form>
+    <label>Moderator's Response</label>
+    <input id="p3" type="text" placeholder="Reload and wait">
+    <input type="submit">
+  </form>
 </template>

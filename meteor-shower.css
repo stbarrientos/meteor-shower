@@ -1,1 +1,11 @@
 /* CSS declarations go here */
+.battlelog {
+  width: 40%;
+  float: right;
+  overflow: scroll;
+}
+
+.battlefield {
+  width: 40%;
+  float: left;
+}
